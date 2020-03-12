@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên tố</title>
+</head>
+<body>
+<strong id="sl">Có số lượng số nguyên tố trong dãy là :</strong><br>
+<strong id="snt">Số nguyên tố có trong dãy từ 0 là : </strong>
+<script>
+let number1 = parseInt(prompt("Nhập vào :"));
+let count = 0;
+function checkPrime(number) {
+    let i = 2 ;
+    let b = true;
+    for (i; i < number; i++) {
+        if (number % i === 0) {
+            b = false;
+            break;
+        }
+    }
+    return b;
+}
+let n = 2;
+let listPrime = "";
+while ( n < number1){
+    if (checkPrime(n)){
+        listPrime += n + ",";
+    }
+    n++;
+}
+alert(listPrime);
+</script>
+
+</body>
+</html>
