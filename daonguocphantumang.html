@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+<script>
+    let array = [ 1 ,5 , 7 ,2, 6, 9, 0 ];
+    let a = 0 ;
+    let b = array.length -1 ;
+   while ( a < b){
+       let c = array[a];
+       array[a] = array[b] ;
+       array[b]=c ;
+       a++; b--;
+    }
+    document.write(array);
+</script>
+</body>
+</html>
