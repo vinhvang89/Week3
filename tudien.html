@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điền</title>
+</head>
+<body>
+<form action="#">
+Nhập <input type="text" id="text" width="20%"><br>
+<button onclick="trans()">Search</button> <button type="reset">Reset</button><br>
+
+</form>
+<script>
+    let eng = ["Good","Bad","Ugly","Dog","Cat","Rat","Money"];
+    let vie = ["Tốt","Tồi","Xấu","Chó","Mèo","Chuột","Tiền"];
+
+    console.log(vie);console.log(vie.length);
+    function trans() {
+        let word1 = document.getElementById("text").value;
+        for (i = 0, j = 0; i < eng.length, j < vie.length; i++, j++) {
+            if (word1 === eng[i]) {
+                alert(vie[j]);
+                break
+            } else if (word1 === vie[j]) {
+                alert(eng[j]);
+                break
+            } else alert("We cant find that");
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
