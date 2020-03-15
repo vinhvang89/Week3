@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+<script>
+    // let color = ["Red","White","Green","Blue"];
+    // let chuoi = " ";
+    // for (i=0;i < color.length;i++){
+    //     chuoi += color[i] + ",";
+    // }
+    // document.write(chuoi.toString());
+// let num =prompt("Nhập vào số bất kỳ");
+    // const str =num.toString();
+    // console.log(str)
+    // let result = str[0];
+    // for (i=1;i<result.length;i++){
+    //     if (str[i-1] % 2 === 0 && str[i] % 2 === 0){
+    //         result.push("-",str[i])} else result.push(str[i]);
+    //     }
+    // console.log(result);
+    // document.write(result.join(''));
+    let str = "ILoveU";
+    let string = str.split('');
+    let result = " ";
+    for(i=0;i<string.length;i++){
+        if (string[i] === string[i].toUpperCase()){ result += string[i].toLowerCase() } else { result +=string[i].toUpperCase()}
+    }
+    console.log(result);
+</script>
+</body>
+</html>
