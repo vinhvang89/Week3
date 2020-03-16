@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<script>
+   //  function haiso(x,y) {
+   //      let sum = x + y ;
+   //      if ( x > y ){ alert("Số thứ nhất lớn hơn số thứ hai") ;return true; } else { return sum;}
+   //
+   //  }
+   // let  a = haiso(8,4);
+   //  document.write(a);
+
+   // function addNumbers() {
+   //     firstNum = 4;
+   //     secondNum = 8;
+   //     result = firstNum + secondNum;alert("@v3");
+   //     return result;
+   // }
+   // result = 0;
+   // result = addNumbers();
+
+    let a = ["Mars","Saturn","Pluto","Mercury","Venus","Jupiter","Nepture"];
+    let b = ["Ares","Cronus","Hades","Hermes","Aphrodite","Zeus","Poseidon"];
+    function search(x) {
+        let c =""; let flag = true;
+        for ( i = 0;i<a.length;i++){
+            for (j = 0 ;j<b.length;j++)
+            if ( x === a[i]){ c = b[j];flag = false }
+        }
+        if(flag === false){return c} else {alert("We can not find that");flag = true}
+    }
+    let d = prompt("Nhập vào tên vị thần la mã bất kỳ :");
+    let e = search(d);
+    alert(e);
+</script>
+</body>
+</html>
