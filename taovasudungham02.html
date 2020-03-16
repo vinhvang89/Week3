@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo vầ sử dụng hàm 02</title>
+</head>
+<body>
+<script>
+    // Bình phương của một số
+    // function square(x) {
+    //     let a = x *x;
+    //     return a;
+    // }
+    // let b = square(8);
+    // document.write(b +"<br>")
+
+    // Diện tích và chu vi hình trong
+    // function Dcircle(x) {
+    //     let a = 2*3.14*x;
+    //     return a ;
+    // }
+    // function Scircle(x) {
+    //     let a = 3.14*x*x;
+    //     return a;
+    // }
+    // let b = Dcircle(5);
+    // let c = Scircle(10);
+    // alert("Chu vi là :" +b + "Diện tích là :" +c);
+
+    // Giai thừa
+    // function giaithua(x) {
+    //     let z = 1 ;
+    //     for ( i = 1 ; i <= x ; i++){
+    //         z *= i
+    //     }
+    //     return z ;
+    // }
+    // let a = giaithua(5);alert(a);
+
+    // Tìm giá trị nhỏ nhất trong 3 số
+    // function checkmin(x,y,z) {
+    //     let a = x ;
+    //     if ( y < a ){ a = y} else { if (z < a ){ a = z }}
+    //     return a ;
+    // }
+    // let b = checkmin(1,2,5);
+    // document.write(b);
+
+    // Kiểm tra nguyên dương
+    // function checkduong(x) {
+    //     let a = true ;
+    //     if ( x < 0){ a = false}
+    //     return a ;
+    // }
+    // let b = parseInt( prompt("Nhập vào số bất kỳ "));
+    // let c = checkduong(b);
+    // alert(c);
+
+    // Đổi chỗ 2 số nguyên nhập vào
+    // function change(x,y) { let z = " ";
+    // z += y ; z += x ; return z
+    // }
+    // let a = change(3,4);
+    // document.write(a);
+
+    // Truyền vào mảng số nguyên bất kỳ rồi đảo ngược mảng
+    // let arr = [ 2,3,4,56,"anh",8]
+    // function reverseArray(x) {
+    //     let a = arr.push(x);
+    //     let b = arr.reverse();
+    //     return b ;
+    // }
+    // let a = reverseArray(6);
+    // document.write(a);
+
+    let a = [2,4,5,2,3,6,7,12,33];
+    function check(x) {
+        let count = 0 ;
+        for (i = 0 ; i <a.length;i++){
+            if ( x === a[i]) count++;
+        }
+        if ( count > 0){ return count} else { count = -1;return count}
+    }
+    let b = check(17);
+    document.write(b);
+</script>
+</body>
+</html>
