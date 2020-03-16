@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function primenumbechecker(x) {
+        let flag = true;
+        for (i=2;i<= x/2;i++){
+            if ( x % i === 0){ flag = false;break} else { flag = true}
+        }
+        if ( flag === true){ return true} else {return false}
+    }
+    let a = primenumbechecker(3);
+    document.write(a);
+</script>
+</body>
+</html>
