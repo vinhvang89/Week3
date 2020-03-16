@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Faking textarea</title>
 </head>
 <body>
-$END$
+<form action="#">
+    <h1>Type slowing please</h1>
+    <input type="text" id="content" align="center" style="height:200px;width: 30%; alignment: left ; font-size: 20px "  onkeydown="abc()" >
+</form>
+<script>
+    let str = "I am so crazy";
+    function abc() {
+        let valuetext= document.getElementById("content").value;
+        let valuetext1 = valuetext.substring(0, valuetext.length - 1);
+        let index = valuetext1.length;
+        valuetext1=valuetext1+str[index];
+        document.getElementById("content").value = valuetext1;
+
+    }
+
+
+</script>
 </body>
 </html>
