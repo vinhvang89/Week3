@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <title>Tic Tac Toe</title>
 </head>
-<body>
-<p id="carogame" />
-<input type="button" value="Change Value" onclick="changeValue()">
+<body onclick="check()">
+<p id="carogame"></p><br>
 <script>
     let b = document.getElementById("carogame ");
 
@@ -23,19 +22,14 @@
         }
     }
 
-    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+    data += "<br/><br/><input type='button' value='1st Player' onclick='player1()'>" +"<br>" + '<input type="button" value="2ndPlayer" onclick="player2()">';
     document.getElementById("carogame").innerHTML = data;
     console.log(data);
-    function changeValue() {
+    function player1() {
         let positionX1 = prompt("X1: ");
         let positionY1 = prompt("Y1: ");
-        let positionX2 = prompt("X2: ");
-        let positionY2 = prompt("Y2: ");
         data = "";
-
-
         if (  board[positionX1][positionY1] === "."){ board[positionX1][positionY1] = "X";} else {alert("Change Again pls");positionX1 = prompt("X1: ");positionY1 = prompt("Y1: ");}
-        if (  board[positionX2][positionY2] === "."){ board[positionX2][positionY2] = "O";} else {alert("Change Again pls");positionX1 = prompt("X2: ");positionY1 = prompt("Y2: ");}
 
         for (let i = 0; i < 5; i++) {
             data += "<br/>";
@@ -43,9 +37,43 @@
                 data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+        data += "<br/><br/><input type='button' value='1st Player' onclick='player1()'>" +"<br>" + '<input type="button" value="2ndPlayer" onclick="player2()">';
         document.getElementById("carogame").innerHTML = "<hr/>" + data;
     }
+
+    function player2() {
+        let positionX2 = prompt("X2: ");
+        let positionY2 = prompt("Y2: ");
+        data = "";
+        if (  board[positionX2][positionY2] === "."){ board[positionX2][positionY2] = "O";} else {alert("Change Again pls");positionX2 = prompt("X2: ");positionY2 = prompt("Y2: ");}
+
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='1st Player' onclick='player1()'>" +"<br>" + '<input type="button" value="2ndPlayer" onclick="player2()">';
+        document.getElementById("carogame").innerHTML = "<hr/>" + data;
+    }
+function check() {
+        let x = "X"; o = "O"; let flag1 = true ; let flag2 = true ; let flag3 = true   ;let flag4 = true;let flag5 = true;let flag6 = true;
+        for (i= 0,j=0;i<5,j<5;i++,j++){
+            if(board[i][j] === x && board[i + 1][j+1] === x && board[i+2][j+2]=== x  ){ flag1 = false}
+            else if (board[i][j] === o && board[i + 1][j+1] === o && board[i+2][j+2]=== o ) { flag2 = false}
+            else  if (board[i][j] === x && board[i][j+1] === x && board[i][j+2] === x) { flag3 = false}
+            else  if (board[i][j] === o && board[i][j+1] === o && board[i][j+2] === o ) { flag4 = false}
+            else  if (board[i][j] === x && board[i+1][j] === x && board[i+2][j] === x ) { flag5 = false}
+            else  if (board[i][j] === o && board[i+1][j] === o && board[i+2][j] === o ) { flag6 = false}
+        }
+        if (flag1 === false || flag3 === false || flag5 === false){(alert("1st Player is winner"))}
+        else {if ( flag2 === false || flag4 === false || flag6 === false){alert("2nd Player is winner")}}
+
+
+}
+
+
 </script>
+
 </body>
 </html>
