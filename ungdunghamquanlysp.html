@@ -2,9 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Ứng dụng quản lý sản phẩm bằng Hàm</title>
 </head>
 <body>
-$END$
+<form action="#">
+<h1> Add a new product</h1><br>
+    <fieldset style="width: 20%">
+    <input  type="text" id="newproduct"  style="width: 230px">
+    <button type="button" id="add" onclick="addanewP()">add</button>
+    </fieldset>
+    <h2>Display All Produce</h2><br>
+    <table width="50%" style="font-size: 20px;color: darkblue" id="showproduct">
+        <tr>
+            <td style="font-size: 30px ; color: darkblue">Product name</td>
+            <td colspan="2"></td>
+            <td></td>
+        </tr>
+        <script>
+            let productname = [ "Samsung","Sony","Apple","HTC","Oppo","Huawei","Nokia" ];
+            let bang = "";
+            for ( i = 0;i <productname.length;i++ ) {
+                bang += "<tr>" + "<br>";
+                bang += "<td id='editname'>" + productname[i] + "</td>" + "";
+                bang += "<td>" + '<button type="button" id="Edit" onclick="edit1()">Edit</button>' + "</td>";
+                bang += "<td>" + '<button type="button" id="Delete" onclick="delete1()">Delete</button>' + "</td>";
+                bang += "</tr>";
+
+            }
+            document.getElementById("showproduct").innerHTML += bang ;
+            function addanewP() {
+                let newproduct=document.getElementById('newproduct').value;
+                productname.push(newproduct);
+                let bang = " <tr>\n" +
+                    "            <td style=\"font-size: 30px ; color: darkblue\">Product name</td>\n" +
+                    "            <td colspan=\"2\"></td>\n" +
+                    "            <td></td>\n" +
+                    "        </tr> ";
+                for ( i = 0;i <productname.length;i++ ) {
+                    bang += "<tr>" + "<br>";
+                    bang += "<td id='editname'>" + productname[i] + "</td>" + "";
+                    bang += "<td>" + '<button type="button" id="Edit" onclick="edit1(i)">Edit</button>' + "</td>";
+                    bang += "<td>" + '<button type="button" id="Delete" onclick="delete1(i)">Delete</button>' + "</td>";
+                    bang += "</tr>";
+                }
+                document.getElementById("showproduct").innerHTML = bang ;}
+
+
+
+                function edit1(index) {
+                    let a = prompt("Typedown a new product :"); productname[index] = a;
+                    let bang = " <tr>\n" +
+                        "            <td style=\"font-size: 30px ; color: darkblue\">Product name</td>\n" +
+                        "            <td colspan=\"2\"></td>\n" +
+                        "            <td></td>\n" +
+                        "        </tr> ";
+                    for ( i = 0;i <productname.length;i++ ) {
+                        bang += "<tr>" + "<br>";
+                        bang += "<td id='editname'>" + productname[i] + "</td>" + "";
+                        bang += "<td>" + '<button type="button" id="Edit" onclick="edit1('+i+')">Edit</button>' + "</td>";
+                        bang += "<td>" + '<button type="button" id="Delete" onclick="delete1('+i+')">Delete</button>' + "</td>";
+                        bang += "</tr>";
+
+                    }
+                    document.getElementById("showproduct").innerHTML = bang ;
+                }
+            function delete1(index) {
+                let a = " "; productname[index] = a;
+                let bang = " <tr>\n" +
+                    "            <td style=\"font-size: 30px ; color: darkblue\">Product name</td>\n" +
+                    "            <td colspan=\"2\"></td>\n" +
+                    "            <td></td>\n" +
+                    "        </tr> ";
+                for ( i = 0;i <productname.length;i++ ) {
+                    bang += "<tr>" + "<br>";
+                    bang += "<td id='editname'>" + productname[i] + "</td>" + "";
+                    bang += "<td>" + '<button type="button" id="Edit" onclick="edit1('+i+')">Edit</button>' + "</td>";
+                    bang += "<td>" + '<button type="button" id="Delete" onclick="delete1('+i+')">Delete</button>' + "</td>";
+                    bang += "</tr>";
+
+                }
+                document.getElementById("showproduct").innerHTML = bang ;
+            }
+
+
+        </script>
+
+
+    </table>
+</form>
+
 </body>
 </html>
